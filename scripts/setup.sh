@@ -71,6 +71,21 @@ echo -e "----------------------------------------"
 echo "VAGRANT ==> Frontend Tools (npm, nodejs, gulp)"
 sudo apt install -y npm nodejs nodejs-legacy
 sudo npm install --global gulp-cli gulp
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+nvm install 9.4.0
+nvm use 9.4.0
+
+#
+# Ethereum Tools
+#
+echo -e "----------------------------------------"
+echo "VAGRANT ==> Ethereum tools (npm, nodejs, gulp)"
+sudo npm install -g ethereumjs-testrpc
+sudo apt-get install software-properties-common
+sudo add-apt-repository -y ppa:ethereum/ethereum
+sudo apt-get update
+sudo apt-get install ethereum
+sudo npm install -g truffle
 
 #
 # redis
